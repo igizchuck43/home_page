@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'icon_with_btn_counter.dart';
+import 'search_field.dart';
 
 class HomeHeader extends StatelessWidget {
   const HomeHeader({super.key});
