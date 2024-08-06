@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class DiscountBanner extends StatelessWidget {
-  const DiscountBanner({
+class HomeBanner extends StatelessWidget {
+  const HomeBanner({
     Key? key,
   }) : super(key: key);
 

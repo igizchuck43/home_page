@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:home_page/home/components/home_banner.dart';
+import 'package:home_page/home/components/home_header.dart';
 
 class HomeScreen extends StatelessWidget {
   static String routeName = "/home";
@@ -13,6 +15,9 @@ class HomeScreen extends StatelessWidget {
           padding: EdgeInsets.symmetric(vertical: 16),
           child: Column(
             children: [
+              HomeHeader(),
+              HomeBanner(),
+              
 
             ],
           ),
