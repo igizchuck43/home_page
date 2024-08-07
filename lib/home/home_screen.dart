@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:home_page/home/components/home_banner.dart';
-import 'package:home_page/home/components/home_details.dart';
 import 'package:home_page/home/components/home_header.dart';
 import 'package:home_page/home/components/special_links.dart';
 
@@ -25,7 +24,7 @@ class HomeScreen extends StatelessWidget {
               HomeBanner(),
               SizedBox(height: 10),
               SpecialLinks(),
-              // HomeDetails()
+
             ],
           ),
         ),
