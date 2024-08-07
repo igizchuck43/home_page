@@ -21,61 +21,81 @@ class SpecialLinks extends StatelessWidget {
           ),
         ),
         SingleChildScrollView(
-          scrollDirection: Axis.vertical,
-          child: Expanded(
-            child: GridView.count(
-              childAspectRatio: 2.2,
-              padding: EdgeInsets.only(left: 16, right: 16),
-              crossAxisCount: 2,
-              crossAxisSpacing: 12,
-              mainAxisSpacing: 12,
-              children: [
-                Image.asset("assets/images/police-48.png"),
-                Image.asset("assets/images/police-48.png"),
-                Image.asset("assets/images/police-48.png"),
-                Image.asset("assets/images/police-48.png"),
-                Image.asset("assets/images/police-48.png"),
-                Image.asset("assets/images/police-48.png"),
 
-              ],
+          // scrollDirection: Axis.horizontal,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              Row(
+                // mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  SpecialOfferCard(
+                    image: "assets/images/ambulance2.jpg",
+                    category: "Order Ambulance",
+                    press: () {
 
-            ),
+                    },
+                  ),
+                  SpecialOfferCard(
+                    image: "assets/images/first-aid.png",
+                    category: "First Aid Tips",
+                    press: () {
+
+                    },
+                  ),
+
+                ],
+              ),
+              const SizedBox(height: 10,),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  SpecialOfferCard(
+                    image: "assets/images/private.png",
+                    category: "Order Private Guard",
+                    press: () {
+
+                    },
+                  ),
+                  SpecialOfferCard(
+                    image: "assets/images/police.png",
+                    category: "Security Organ",
+                    press: () {
+
+                    },
+                  ),
+                ],
+              ),
+              const SizedBox(height: 10,),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  SpecialOfferCard(
+                    image: "assets/images/contact.png",
+                    category: "Emergency Contacts",
+                    press: () {
+
+                    },
+                  ),
+                  SpecialOfferCard(
+                    image: "assets/images/insurance.png",
+                    category: "Travel Insurance",
+                    press: () {
+
+                    },
+                  ),
+                ],
+              ),
+            ],
           ),
-
-          // child: SpecialLink2(),
         ),
       ],
     );
   }
-
-  Row SpecialLink2() {
-    return Row(
-          children: [
-            SpecialLinkCard(
-              image: "assets/images/ambulance-48.png",
-              category: "Book an Ambulance",
-
-              press: () {
-                // Navigator.pushNamed(context, ProductsScreen.routeName);
-              },
-            ),
-            SpecialLinkCard(
-              image: "assets/images/Image Banner 3.png",
-              category: "Fashion",
-
-              press: () {
-                // Navigator.pushNamed(context, ProductsScreen.routeName);
-              },
-            ),
-
-            const SizedBox(width: 20),
-          ],
-        );
-  }
 }
 
-class SpecialLinkCard extends StatelessWidget {
-  const SpecialLinkCard({
+class SpecialOfferCard extends StatelessWidget {
+  const SpecialOfferCard({
     Key? key,
     required this.category,
     required this.image,
@@ -95,18 +115,27 @@ class SpecialLinkCard extends StatelessWidget {
         onTap: press,
         child: SizedBox(
           width: 200,
-          height: 120,
+          height: 90,
           child: ClipRRect(
             borderRadius: BorderRadius.circular(20),
             child: Stack(
               children: [
                 Image.asset(
                   image,
-                  fit: BoxFit.cover,
+                  // fit: BoxFit.cover,
                 ),
                 Container(
                   decoration: const BoxDecoration(
-                    color: Color(0xFFFFF6E4),
+                    gradient: LinearGradient(
+                      begin: Alignment.topCenter,
+                      end: Alignment.bottomCenter,
+                      colors: [
+                        Colors.black54,
+                        Colors.black38,
+                        Colors.black26,
+                        Colors.transparent,
+                      ],
+                    ),
                   ),
                 ),
                 Padding(
@@ -116,7 +145,7 @@ class SpecialLinkCard extends StatelessWidget {
                   ),
                   child: Text.rich(
                     TextSpan(
-                      style: const TextStyle(color: Colors.black),
+                      style: const TextStyle(color: Colors.white),
                       children: [
                         TextSpan(
                           text: "$category\n",
