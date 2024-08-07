@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:flutter/material.dart';
+
 
 class HomeDetails extends StatelessWidget {
 
@@ -31,26 +31,25 @@ class HomeDetails extends StatelessWidget {
 
   Cards card6 = new Cards(
       title: "Travel Insurance",
-      img: "assets/images/insurance-policy-48.png"
+      img: "assets/images/insurance-policy-64.png"
   );
 
   HomeDetails({super.key});
 
-
-
-  // const HomeGrid({super.key});
+  // HomeDetails({super.key});
+  // const HomeDetails({super.key});
 
   @override
   Widget build(BuildContext context) {
     List<Cards> myList = [card1, card2, card3, card4, card5, card6];
     var color = 0xFFFFF6E4;
-    return Flexible(
+    return Expanded(
       child: GridView.count(
-        childAspectRatio: 1.0,
+        childAspectRatio: 2.2,
         padding: EdgeInsets.only(left: 16, right: 16),
         crossAxisCount: 2,
-        crossAxisSpacing: 18,
-        mainAxisSpacing: 18,
+        crossAxisSpacing: 12,
+        mainAxisSpacing: 12,
         children: myList.map((data) {
           return Container(
             decoration: BoxDecoration(
@@ -59,13 +58,15 @@ class HomeDetails extends StatelessWidget {
             ),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
+
               children: <Widget>[
+
                 Image.asset(data.img, width: 42),
-                SizedBox(height: 14),
+                SizedBox(height: 10),
                 Text(
                   data.title,
                   style: TextStyle(
-                    color: Colors.white,
+                    color: Colors.black,
                     fontSize: 16,
                     fontWeight: FontWeight.w600,
                   ),

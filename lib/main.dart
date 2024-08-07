@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:home_page/home/components/home_details.dart';
 import 'package:home_page/home/home_screen.dart';
 
 void main() {
@@ -13,7 +14,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: "Kurinda",
-      initialRoute: HomeScreen.routeName,
+      // home: HomeDetails(),
+      home: HomeScreen(),
+      // initialRoute: HomeScreen.routeName,
     );
   }
 }

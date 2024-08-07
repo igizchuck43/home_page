@@ -10,7 +10,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-    return Scaffold(
+    return const Scaffold(
       body: SafeArea(
         child: SingleChildScrollView(
           padding: EdgeInsets.symmetric(vertical: 16),
@@ -18,7 +18,10 @@ class HomeScreen extends StatelessWidget {
             children: [
               HomeHeader(),
               HomeBanner(),
-              HomeDetails(),
+              SizedBox(height: 20),
+
+
+              // HomeDetails(),
             ],
           ),
         ),
